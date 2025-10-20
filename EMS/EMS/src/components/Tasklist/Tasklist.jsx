@@ -1,7 +1,7 @@
 // Tasklist.jsx - Updated
 import React from 'react'
 
-const Tasklist = () => {
+const Tasklist = ({data}) => {
   const tasks = [
     { priority: 'High', date: '18 Oct 2025', title: 'Website Redesign', description: 'Complete the homepage redesign with modern UI components and responsive layout' },
     { priority: 'Medium', date: '19 Oct 2025', title: 'Client Meeting', description: 'Prepare presentation for quarterly review with important stakeholders' },

@@ -4,12 +4,12 @@ import Header from '../other/Header'
 import TaskListNumber from '../other/TaskListNumber'
 import Tasklist from '../Tasklist/Tasklist'
 
-const Employeedashboard = () => {
+const Employeedashboard = ({data}) => {
   return (
     <div className='bg-gradient-to-br from-gray-900 via-black to-gray-800 h-screen text-white overflow-hidden'>
-      <Header />
-      <TaskListNumber/>
-      <Tasklist />
+      <Header data={data} />
+      <TaskListNumber data={data}/>
+      <Tasklist data={data}/>
     </div>
   )
 }
