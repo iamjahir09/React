@@ -1,12 +1,14 @@
 import React from 'react'
 import Login from './components/Auth/Login'
 import Signup from './components/Auth/Signup'
+import Left from './components/others/Left'
 
 const App = () => {
   return (
     <div>
-      <Login />
+      {/* <Login /> */}
       {/* <Signup /> */}
+      <Left />
     </div>
   )
 }
