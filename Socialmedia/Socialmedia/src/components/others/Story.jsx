@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../App.css';
+import Middle from './Middle';
 
 const Story = () => {
   const stories = [
@@ -14,7 +15,8 @@ const Story = () => {
   ]
 
   return (
-    <div className='w-160 h-31 rounded-lg p-4 flex flex-nowrap' id='stories'>
+    <div className='ml-0'>
+      <div className='w-150 h-31 rounded-lg py-4 flex flex-nowrap' id='stories'>
       <div className='flex space-x-4 overflow-x-auto'>
         {stories.map((story) => (
           <div key={story.id} className='flex flex-col items-center space-y-1 shrink-0'>
@@ -37,6 +39,8 @@ const Story = () => {
           </div>
         ))}
       </div>
+    </div>
+    <Middle />
     </div>
   )
 }

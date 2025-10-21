@@ -46,13 +46,13 @@ const Left = () => {
                 </div>
             </div>
 
-            {/* 🔹 Mobile Bottom Navbar */}
-            <div className='sm:hidden fixed bottom-0 left-0 w-full bg-black border-t border-gray-800 flex justify-around items-center py-3'>
+            {/* 🔹 Mobile Bottom Navbar - FIXED */}
+            <div className='sm:hidden fixed bottom-0 left-0 w-full bg-black border-t border-gray-800 flex justify-around items-center py-3 z-50'>
                 <House className='text-white w-6 h-6' />
-                <SquarePlay className='text-white w-6 h-6' />
+                <Search className='text-white w-6 h-6' />
                 <SquarePlus className='text-white w-6 h-6' />
+                <SquarePlay className='text-white w-6 h-6' />
                 <MessageCircle className='text-white w-6 h-6' />
-                <Compass className='text-white w-6 h-6' />
             </div>
 
             <div className='border-l border-gray-900 h-screen'></div>

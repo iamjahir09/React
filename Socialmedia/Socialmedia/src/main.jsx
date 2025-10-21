@@ -12,8 +12,8 @@ createRoot(document.getElementById('root')).render(
     <App>
         <Left/>
         <Right />
+        <Story />
         
-        <Header />
     </App>
   
 )
