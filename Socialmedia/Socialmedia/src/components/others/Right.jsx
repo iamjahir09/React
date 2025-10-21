@@ -2,34 +2,34 @@ import React from 'react'
 
 const Right = () => {
   return (
-    <div className='w-full max-w-xs mx-auto lg:mx-0 lg:fixed lg:right-10 lg:top-8 top-0'>
+    <div className='w-full max-w-xs mx-auto lg:mx-0 lg:fixed lg:right-10 lg:top-8 top-0 cursor-pointer'>
       
-      {/* Profile Section */}
+      
       <div className='flex items-center justify-between top-0 mb-4 mt-0'>
         <div className='flex items-center space-x-3'>
-          {/* Profile Avatar */}
+          
           <div className='w-14 h-14 top-0 bg-linear-to-r from-purple-400 to-pink-500 rounded-full border-2 border-white shadow-sm'></div>
           <div>
             <h2 className='font-semibold text-sm'>iamjahir_09</h2>
             <p className='text-gray-500 text-xs'>★彡[JAHIR]彡★</p>
           </div>
         </div>
-        <button className='text-xs text-blue-500 font-semibold hover:text-blue-400 transition-colors'>
+        <button className='text-xs text-blue-500 font-semibold hover:text-blue-400 transition-colors cursor-pointer'>
           Switch
         </button>
       </div>
 
-      {/* Suggested for you Header */}
+      
       <div className='flex justify-between items-center mb-3'>
         <span className='text-gray-500 font-semibold text-sm'>Suggested for you</span>
-        <button className='text-xs text-black font-semibold hover:text-gray-700 transition-colors'>
+        <span className='text-xs font-semiboldtext-gray-700'>
           See All
-        </button>
+        </span>
       </div>
 
-      {/* Suggested Users List */}
+      
       <div className='space-y-4 mb-6'>
-        {/* User 1 */}
+        
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-3'>
             <div className='w-8 h-8 bg-linear-to-r from-yellow-400 to-orange-500 rounded-full'></div>
@@ -43,7 +43,7 @@ const Right = () => {
           </button>
         </div>
 
-        {/* User 2 */}
+        
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-3'>
             <div className='w-8 h-8 bg-linear-to-r from-green-400 to-blue-500 rounded-full'></div>
@@ -57,7 +57,7 @@ const Right = () => {
           </button>
         </div>
 
-        {/* User 3 */}
+        
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-3'>
             <div className='w-8 h-8 bg-linear-to-r from-pink-400 to-red-500 rounded-full'></div>
@@ -71,7 +71,7 @@ const Right = () => {
           </button>
         </div>
 
-        {/* User 4 */}
+        
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-3'>
             <div className='w-8 h-8 bg-linear-to-r from-purple-400 to-indigo-500 rounded-full'></div>
@@ -85,7 +85,7 @@ const Right = () => {
           </button>
         </div>
 
-        {/* User 5 */}
+        
         <div className='flex items-center justify-between'>
           <div className='flex items-center space-x-3'>
             <div className='w-8 h-8 bg-linear-to-r from-teal-400 to-cyan-500 rounded-full'></div>
@@ -100,7 +100,7 @@ const Right = () => {
         </div>
       </div>
 
-      {/* Footer Links */}
+      
       <div className='text-gray-400 text-xs space-y-2'>
         <div className='flex flex-wrap gap-2'>
           <span className='hover:text-gray-500 cursor-pointer'>About</span>
@@ -112,7 +112,7 @@ const Right = () => {
           <span className='hover:text-gray-500 cursor-pointer'>Terms</span>
           <span className='hover:text-gray-500 cursor-pointer'>Locations</span>
           <span className='hover:text-gray-500 cursor-pointer'>Language</span>
-          <span className='hover:text-gray-500 cursor-pointer'>Meta Verified</span>
+          
         </div>
         
       </div>
