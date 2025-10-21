@@ -25,7 +25,7 @@ const Login = () => {
                         <div className='bg-white/90 backdrop-blur-sm border-2 border-white/20 shadow-2xl rounded-3xl py-8 px-6'>
                             {/* Header */}
                             <div className='text-center mb-8'>
-                                <h2 className='text-4xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent'>Login</h2>
+                                <h2 className='text-4xl font-bold bg-linear-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent'>Login</h2>
                             </div>
 
                             {/* Form Fields */}
@@ -60,7 +60,7 @@ const Login = () => {
 
                             {/* Submit Button */}
                             <div className='text-center mt-8'>
-                                <button  onClick={onsubmit} className='bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-4 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 outline-none'>
+                                <button  onClick={onsubmit} className='bg-linear-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-4 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 outline-none'>
                                     Submit
                                 </button>
                             </div>
