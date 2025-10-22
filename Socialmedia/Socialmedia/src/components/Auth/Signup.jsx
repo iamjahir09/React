@@ -1,10 +1,13 @@
 import React from 'react'
-
+import Login from './Login'
+import { useNavigate } from 'react-router-dom'
 const Signup = () => {
+    const navigate = useNavigate()
+
   return (
     <div className='bg-black min-h-screen flex items-center justify-center p-4'>
             <div className='flex flex-col md:flex-row items-center justify-between w-full max-w-6xl gap-8'>
-                {/* Image Section - Left Side */}
+                
                 <div className='w-full md:w-1/2 flex justify-center'>
                     <img 
                         src="https://bcdn.mindler.com/bloglive/wp-content/uploads/2024/09/18135206/Empowering-Teens_How-to-Use-Social-Media-for-Good_blog-770x385.png" 
@@ -13,20 +16,20 @@ const Signup = () => {
                     />
                 </div>
 
-                {/* Form Section - Right Side */}
+                
                 <div className='w-full md:w-1/2'>
                     <form onSubmit={(e)=>{
                         e.preventDefault()
                     }}>
                         <div className='bg-white/90 backdrop-blur-sm border-2 border-white/20 shadow-2xl rounded-3xl py-8 px-6'>
-                            {/* Header */}
+                            
                             <div className='text-center mb-8'>
                                 <h2 className='text-4xl font-bold bg-linear-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent'>Login</h2>
                             </div>
 
-                            {/* Form Fields */}
+                            
                             <div className='space-y-6'>
-                                {/* First Name */}
+                                
                                 <div className='space-y-2'>
                                     <h2 className='text-lg font-semibold text-gray-700 px-2'>Enter your first name</h2>
                                     <input 
@@ -36,7 +39,7 @@ const Signup = () => {
                                     />
                                 </div>
 
-                                {/* Last Name */}
+                                
                                 <div className='space-y-2'>
                                     <h2 className='text-lg font-semibold text-gray-700 px-2'>Enter your last name</h2>
                                     <input 
@@ -46,7 +49,7 @@ const Signup = () => {
                                     />
                                 </div>
 
-                                {/* Email */}
+                                
                                 <div className='space-y-2'>
                                     <h2 className='text-lg font-semibold text-gray-700 px-2'>Enter your email address</h2>
                                     <input 
@@ -56,7 +59,7 @@ const Signup = () => {
                                     />
                                 </div>
 
-                                {/* Password */}
+                                
                                 <div className='space-y-2'>
                                     <div className='flex justify-between px-2'>
                                         <h2 className='text-lg font-semibold text-gray-700'>Enter your password</h2>
@@ -72,18 +75,18 @@ const Signup = () => {
                                 </div>
                             </div>
 
-                            {/* Submit Button */}
+                            
                             <div className='text-center mt-8'>
                                 <button  onClick={onsubmit} className='bg-linear-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold py-4 px-12 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 outline-none'>
                                     Submit
                                 </button>
                             </div>
 
-                            {/* Additional Links */}
+                            
                             <div className='text-center mt-6 space-y-2'>
                                 <p className='text-gray-600'>
                                     already have an account? 
-                                    <span className='text-orange-500 font-semibold ml-1 cursor-pointer hover:text-orange-600 transition-colors'>
+                                    <span className='text-orange-500 font-semibold ml-1 cursor-pointer hover:text-orange-600 transition-colors' onClick={() => navigate('/Login')}>
                                         Log in
                                     </span>
                                 </p>

@@ -2,7 +2,7 @@ import React from 'react'
 import '../../App.css';
 import Middle from './Middle';
 
-const Story = () => {
+const Story = ({data}) => {
   const stories = [
     { id: 1, username: 'iamjahir_09', isLive: true },
     { id: 2, username: 'creative_mind', isLive: false },
@@ -40,7 +40,7 @@ const Story = () => {
         ))}
       </div>
     </div>
-    <Middle />
+    <Middle datas ={data} />
     </div>
   )
 }

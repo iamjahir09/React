@@ -1,37 +1,48 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './components/Auth/Login'
 import Signup from './components/Auth/Signup'
 import Left from './components/others/Left'
 import Right from './components/others/Right'
 import Story from './components/others/Story'
 import Messages from './components/others/Messages'
+import { AuthContext } from './context/AuthProvider'
+import Main from './components/others/Main'
 
 const App = () => {
+  const [userdata] = useContext(AuthContext)
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('loggedInUser'))
+    if (storedUser) setUser(storedUser)
+  }, [])
+
+  const handleLogin = (email, password) => {
+    if (email === 'admin@123.com' && password === '123') {
+      const newUser = { role: 'admin', email }
+      localStorage.setItem('loggedInUser', JSON.stringify(newUser))
+      setUser(newUser)
+    } else {
+      alert('Invalid credentials')
+    }
+  }
+
   return (
-    <div className="bg-black text-white flex justify-between relative min-h-screen overflow-x-hidden">
+    <Routes>
+      <Route path="/Login" element={<Login handleLogin={handleLogin} />} />
+      <Route path="/signup" element={<Signup />} />
 
-      {/* 🔹 Left Sidebar */}
-      <div className="fixed top-0 left-0 h-full z-50">
-        <Left />
-      </div>
-
-      {/* 🔹 Center Main Content */}
-      <div className="flex-1 mx-auto lg:ml-72 lg:mr-80 md:ml-64 md:mr-64 sm:ml-20 sm:mr-20 mt-5 overflow-y-auto">
-        <Story />
-      </div>
-
-      {/* 🔹 Right Sidebar */}
-      <div className="fixed top-8 right-10 hidden lg:block z-40">
-        <Right />
-      </div>
-
-      {/* 🔹 Messages Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Messages />
-      </div>
-
-
-    </div>
+      {/* Protected Feed */}
+      <Route
+        path="/main"
+        element={
+          user ?< Main /> : (
+            <Navigate to="/Login" />
+          )
+        }
+      />
+    </Routes>
   )
 }
 
