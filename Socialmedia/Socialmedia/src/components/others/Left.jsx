@@ -4,14 +4,14 @@ import { Search, Compass, House, SquarePlay, MessageCircle, Heart, SquarePlus, E
 const Left = () => {
   return (
     <div className="flex bg-black text-white h-screen relative">
-      {/* Left panel for medium and larger screens */}
+
       <div className="hidden sm:flex flex-col justify-between bg-black w-16 md:w-64 min-h-screen fixed transition-all duration-300 ease-in-out">
         <div>
           <div className="px-4 py-5 md:px-10">
-  <h2 className="text-[34px] md:text-[42px] font-bold text-center md:text-left select-none antialiased leading-none" style={{ fontFamily: "'Great Vibes', cursive" }}>
-    Blyntrex
-  </h2>
-</div>
+            <h2 className="text-[34px] md:text-[42px] font-normal text-center md:text-left select-none antialiased leading-none" style={{ fontFamily: "'Dancing Script', cursive" }}>
+              Blyntrex
+            </h2>
+          </div>
           <div className="flex flex-col gap-4 p-4 md:p-8 text-sm md:text-lg font-semibold">
             <div className="flex gap-3 items-center hover:bg-gray-800 p-2 rounded-md cursor-pointer transition-colors">
               <House className="w-6 h-6" />
@@ -56,7 +56,7 @@ const Left = () => {
           </div>
         </div>
       </div>
-      {/* Bottom icons for small screens */}
+
       <div className="sm:hidden fixed bottom-0 left-0 w-full bg-black border-t border-gray-800 flex justify-around items-center py-3 z-50">
         <House className="text-white w-7 h-7 hover:text-gray-300 transition-colors" />
         <Search className="text-white w-7 h-7 hover:text-gray-300 transition-colors" />
