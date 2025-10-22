@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getLocalStorage } from "../../utils/LocalStorage";
 
 const Right = () => {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+
+    const loggedIn = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (loggedIn) {
+      const users = getLocalStorage();
+      const user = users.find(u => u.email === loggedIn.email);
+      setCurrentUser(user);
+    }
+  }, []);
+
+
+  if (!currentUser) return null;
+
   const suggestions = [
     { name: "nagnathmadhorav", info: "Suggested for you", gradient: "from-yellow-400 to-orange-500" },
     { name: "ds_ke_bache", info: "Followed by pro.nawaz", gradient: "from-green-400 to-blue-500" },
@@ -11,25 +27,31 @@ const Right = () => {
 
   return (
     <div className="w-70 max-w-xs mx-auto lg:fixed lg:right-10 lg:top-8 mt-1">
-      {/* Profile */}
+
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className="w-14 h-14 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-2 border-white shadow-md"></div>
+          <img
+            src={currentUser.profile_pic}
+            alt={currentUser.username}
+            className="w-14 h-14 rounded-full border-2 border-white shadow-md"
+          />
           <div>
-            <h2 className="font-semibold text-sm">iamjahir_09</h2>
-            <p className="text-gray-500 text-xs">★彡[JAHIR]彡★</p>
+            <h2 className="font-semibold text-sm">{currentUser.username}</h2>
+            <p className="text-gray-500 text-xs">{currentUser.name}</p>
           </div>
         </div>
-        <button className="text-xs text-blue-500 font-semibold hover:text-blue-400 transition-colors">Switch</button>
+        <button className="text-xs text-blue-500 font-semibold hover:text-blue-400 transition-colors">
+          Switch
+        </button>
       </div>
 
-      {/* Suggested for you */}
+
       <div className="flex justify-between items-center mb-3">
         <span className="text-gray-500 font-semibold text-sm">Suggested for you</span>
-        <span className="text-xs text-white font-semibold  cursor-pointer">See All</span>
+        <span className="text-xs text-white font-semibold cursor-pointer">See All</span>
       </div>
 
-      {/* Suggestions list */}
+
       <div className="space-y-4 mb-6">
         {suggestions.map((user, index) => (
           <div key={index} className="flex items-center justify-between">
@@ -40,12 +62,14 @@ const Right = () => {
                 <p className="text-gray-500 text-xs truncate">{user.info}</p>
               </div>
             </div>
-            <button className="text-xs text-blue-500 font-semibold hover:text-blue-400 transition-colors cursor-pointer">Follow</button>
+            <button className="text-xs text-blue-500 font-semibold hover:text-blue-400 transition-colors cursor-pointer">
+              Follow
+            </button>
           </div>
         ))}
       </div>
 
-      {/* Footer */}
+
       <div className="text-gray-400 text-xs flex flex-wrap gap-2">
         {["About", "Help", "Press", "API", "Jobs", "Privacy", "Terms", "Locations", "Language"].map((item, i) => (
           <span key={i} className="hover:text-gray-500 cursor-pointer">{item}</span>
