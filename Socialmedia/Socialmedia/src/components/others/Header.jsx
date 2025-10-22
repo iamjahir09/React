@@ -3,7 +3,7 @@ import Story from './Story'
 
 const Header = () => {
   return (
-    <div>
+    <div className="w-full border-none">
       <Story />
     </div>
   )

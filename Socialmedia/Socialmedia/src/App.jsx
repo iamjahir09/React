@@ -11,25 +11,17 @@ const App = () => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    // Initialize users in localStorage if not already present
     const users = getLocalStorage()
     if (!users || users.length === 0) {
       setLocalStorage()
     }
-
-    // Load currently logged-in user
     const storedUser = JSON.parse(localStorage.getItem('loggedInUser'))
     if (storedUser) setUser(storedUser)
   }, [])
 
   const handleLogin = (email, password) => {
-    const users = getLocalStorage() // Get users from localStorage
-
-    // Check if user exists with email and password
-    const loggedInUser = users.find(
-      u => u.email === email && u.password === password
-    )
-
+    const users = getLocalStorage()
+    const loggedInUser = users.find(u => u.email === email && u.password === password)
     if (loggedInUser) {
       localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser))
       setUser(loggedInUser)
@@ -42,14 +34,10 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/Login" element={<Login handleLogin={handleLogin} />} />
+      <Route path="/login" element={<Login handleLogin={handleLogin} />} />
       <Route path="/signup" element={<Signup />} />
-      <Route
-        path="/main"
-        element={user ? <Main /> : <Navigate to="/Login" />}
-      />
-      {/* Optional: Redirect any unknown route to login */}
-      <Route path="*" element={<Navigate to="/Login" />} />
+      <Route path="/main" element={user ? <Main /> : <Navigate to="/login" />} />
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
   )
 }

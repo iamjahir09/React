@@ -336,7 +336,7 @@ const users = [
     "name": "Suresh Yadav",
     "username": "@suresh_hiker",
     "email": "suresh.yadav@example.com",
-    "password": "suresh123",
+    "password": "suresh1234",
     "post_image": "https://images.unsplash.com/photo-1551632811-561732d1e306",
     "description": "Conquering peaks and personal limits ⛰️. Mountains call and I must answer.",
     "profile_pic": "https://randomuser.me/api/portraits/men/54.jpg"

@@ -1,7 +1,6 @@
 import React from 'react'
-import '../../App.css'
 import Middle from './Middle'
-
+import '../../App.css'
 const Story = ({ data }) => {
   const stories = [
     { id: 1, username: 'iamjahir_09', isLive: true },
@@ -14,38 +13,31 @@ const Story = ({ data }) => {
     { id: 8, username: 'art_gallery', isLive: true },
   ]
 
-
   const postsData = data || []
 
   return (
-    <div className='ml-0'>
-      <div className='w-150 h-31 rounded-lg py-4 flex flex-nowrap' id='stories'>
-        <div className='flex space-x-4 overflow-x-auto'>
+    <div className="w-full sm:max-w-lg mx-auto border-none">
+      <div className="w-full py-4 flex flex-nowrap overflow-x-auto scrollbar-hide" id='stories'>
+        <div className="flex space-x-3 px-2">
           {stories.map((story) => (
-            <div key={story.id} className='flex flex-col items-center space-y-1 shrink-0'>
+            <div key={story.id} className="flex flex-col items-center space-y-1 shrink-0">
               <div
-                className={`p-0.5 rounded-full ${story.isLive
-                    ? 'bg-linear-to-r from-red-500 to-pink-500'
-                    : 'bg-linear-to-r from-yellow-400 to-purple-600'
-                  }`}
+                className={`p-0.5 rounded-full ${
+                  story.isLive ? 'bg-gradient-to-r from-red-500 to-pink-500' : 'bg-gradient-to-r from-yellow-400 to-purple-600'
+                }`}
               >
-                <div className='bg-white p-0.5 rounded-full'>
-                  <div className='w-16 h-16 bg-linear-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-sm'>
+                <div className="bg-black p-0.5 rounded-full">
+                  <div className="w-14 h-14 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
                     {story.username.charAt(0).toUpperCase()}
                   </div>
                 </div>
               </div>
-
-              <span className='text-xs text-gray-600 truncate max-w-16'>
-                {story.username}
-              </span>
+              <span className="text-xs text-gray-400 truncate max-w-16">{story.username}</span>
             </div>
           ))}
         </div>
       </div>
-
-
-      <Middle datas={data} />
+      <Middle datas={postsData} />
     </div>
   )
 }
